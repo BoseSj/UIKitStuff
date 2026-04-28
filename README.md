@@ -12,8 +12,8 @@ A project demonstrating the use of UICollectionViewDiffableDataSource for effici
 
 ## Requirements
 
-- iOS 13.0 or later
-- Xcode 12.0 or later
+- iOS 26.4 or later
+- Xcode 16.0 or later
 - Swift 5.0 or later
 
 ## Getting Started

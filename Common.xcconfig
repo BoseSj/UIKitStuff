@@ -1,0 +1,4 @@
+// Shared build settings for all UIKitStuff sample apps
+IPHONEOS_DEPLOYMENT_TARGET = 26.4
+SWIFT_VERSION = 5.0
+TARGETED_DEVICE_FAMILY = 1
