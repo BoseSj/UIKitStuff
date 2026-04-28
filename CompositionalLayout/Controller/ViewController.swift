@@ -41,7 +41,6 @@ final class ViewController: UIViewController, UICollectionViewDelegate {
             self.dataSource.apply(snapShot)
         }
     }
-
 }
 
 
@@ -72,8 +71,27 @@ private extension ViewController {
     }
 }
 
-/// Layout
+/// UI
 extension ViewController {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        contextMenuConfigurationForItemsAt indexPaths: [IndexPath],
+        point: CGPoint
+    ) -> UIContextMenuConfiguration? {
+        UIContextMenuConfiguration(actionProvider:  { _ in
+            UIMenu(
+                children: [
+                    UIAction(title: "Details", handler: { _ in
+                        print("Details")
+                    })
+                ]
+            )
+        })
+    }
+}
+
+/// Layout
+private extension ViewController {
     static func sectionLayout() -> NSCollectionLayoutSection {
         /// Item
         let item = NSCollectionLayoutItem(

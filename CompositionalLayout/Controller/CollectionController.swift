@@ -19,22 +19,15 @@ class CollectionController {
     var snapShot: NSDiffableDataSourceSnapshot<String, Int>?
     
     init() {
-        Task {
-            do {
-                snapShot = NSDiffableDataSourceSnapshot<String, Int>()
-                
-                try await Task.sleep(for: .seconds(0.7))
-                self.snapShot?.appendSections([self.sections[0]])
-                self.snapShot?.appendItems(self.items)
-                
-                try await Task.sleep(for: .seconds(0.7))
-                self.snapShot?.appendSections([self.sections[1]])
-                self.snapShot?.appendItems(self.secondItems)
-                
-                try await Task.sleep(for: .seconds(0.7))
-                self.snapShot?.appendSections([self.sections[2]])
-                self.snapShot?.appendItems(self.thirdItems)
-            }
-        }
+        var snap = NSDiffableDataSourceSnapshot<String, Int>()
+        
+        snap.appendSections([self.sections[0]])
+        snap.appendItems(self.items)
+        snap.appendSections([self.sections[1]])
+        snap.appendItems(self.secondItems)
+        snap.appendSections([self.sections[2]])
+        snap.appendItems(self.thirdItems)
+        
+        self.snapShot = snap
     }
 }
